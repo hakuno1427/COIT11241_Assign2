@@ -1,0 +1,47 @@
+Group Name: MedusaLocker
+Description: MedusaLocker is a Ransomware-as-a-Service (RaaS) organization who mainly target manufacturing, education, professional services, fincance and insurance company (https://socradar.io). They often encrypt files on infected systems, making them inaccessible to users and demand payment for decryption (https://www.provendata.com).
+
+
+Techniques:
+ • Phishing: Spearphishing Attachment (T1566.001) – MedusaLocker has
+ used spearphishing email attachments to deliver their malwares in many cases in the past (HC3 2023)
+ 
+Software Name: office_2019
+Group Association: office_2019 has been used by MedusaLocker.
+Description: office_2019 is custom malware used by MedusaLocker disguised as an Office installation
+Platform: Windows
+Techniques:
+ • Masquerading (T1036) – MedusaLocker has created a process for office_2019.tmp, masqueraded as an installation process for Microsoft Office 
+ • DLL Side-Loading (T1574.002) – MedusaLocker has used office_2019.exe to load office_2019.tmp,
+ its malicious dll file
+ • Dynamic-link Library Injection (T1055.001) – MedusaLocker has used procexp64.exe to accessed the process "office_2019.tmp", for the purpose of DLL injection
+ • Process Injection (T1055) – MedusaLocker has used EngHost.exe to inject another thread into the process "office_2019.tmp"
+ • Service Creation (T1543) – MedusaLocker has added a service to run their malware 
+
+
+Software Name: excel_2010_x64
+Group Association: excel_2010_x64 has been used by MedusaLocker.
+Description: excel_2010_x64 is custom malware used by MedusaLocker disguised as an Excel installation
+Platform: Windows
+Techniques:
+ • Masquerading (T1036) – MedusaLocker has created a process for excel_2010_x64.tmp from excel_2010_x64.exe, masqueraded as an installation process for Microsoft Excel 
+ • DLL Side-Loading (T1574.002) – MedusaLocker has used excel_2010_x64.exe to load excel_2010_x64.tmp, its malicious dll file
+ • Service Creation (T1543) – MedusaLocker has changed the Windows Baackground Activity Moderator (BAM)'s setting
+ 
+Software Name: word6_x64
+Group Association: word6_x64 has been used by MedusaLocker.
+Description: word6_x64 is custom malware used by MedusaLocker disguised as a Word installation
+Platform: Windows
+Techniques:
+ • Masquerading (T1036) – MedusaLocker has created a process for word6_x64.tmp from word6_x64.exe, masqueraded as an installation process for Microsoft Word 
+ • DLL Side-Loading (T1574.002) – MedusaLocker has used word6_x64.exe to load word6_x64.tmp, its malicious dll file
+ • Service Creation (T1543) – MedusaLocker has changed the BAM's setting
+ 
+Software Name: access_2016_x64
+Group Association: access_2016_x64 has been used by MedusaLocker.
+Description: access_2016_x64 is custom malware used by MedusaLocker disguised as a Access installation
+Platform: Windows
+Techniques:
+ • Masquerading (T1036) – MedusaLocker has created a process for access_2016_x64.tmp from access_2016_x64.exe, masqueraded as an installation process for Microsoft Access 
+ • DLL Side-Loading (T1574.002) – MedusaLocker has used access_2016_x64.exe to load access_2016_x64.tmp, its malicious dll file
+ • Service Creation (T1543) – MedusaLocker has changed the BAM's setting
